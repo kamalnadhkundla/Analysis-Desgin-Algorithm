@@ -4,18 +4,20 @@ Input: arr[] = {1, 2, 3, 4, 5, 6}
 Output: 3 5 6 1 2 4
 """
 
-arr = list(map(int,input().split()))
-n= len(arr)
-a = []
-for x in arr:
-    bin_x = bin(x)
-    res = list(bin_x)
-    res = res[2:]
-    a.append(res.count('1'))
+def numofsetbits(n):
+    st=''
+    while(n>0):
+        st+=str(n&1)
+        n=n>>1
+    return st.count('1')
 
-for i in range(n-1):
-    for j in range(i+1,n):
-        if a[i]<a[j]:
-            a[i],a[j]=a[j],a[i]
-            arr[i],arr[j]=arr[j],arr[i]
-print(arr)
+lst=list(map(int,input().split()))
+res=[]
+for i in lst:
+    res.append(numofsetbits(i))
+for i in range(len(lst)-1):
+    for j in range(len(lst)-i-1):
+        if(res[j]<res[j+1]):
+            res[j],res[j+1]=res[j+1],res[j]
+            lst[j],lst[j+1]=lst[j+1],lst[j]
+print(lst)

@@ -16,4 +16,4 @@ for i in range(0,len(p)):
     c.append(p[i])
 b.sort()
 c.sort()
-print(b+c)
+print(sorted(b+c))

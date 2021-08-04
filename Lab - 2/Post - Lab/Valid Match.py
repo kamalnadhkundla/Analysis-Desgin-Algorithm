@@ -11,7 +11,8 @@ def search(pat, txt, q):
     for i in range(M-1):
         h = (h*d)%q
  
-    # Calculate the hash value of pattern and first window of text
+    # Calculate the hash value of pattern and first window
+    # of text
     for i in range(M):
         p = (d*p + pat[i])%q
         t = (d*t + txt[i])%q
@@ -44,4 +45,4 @@ def search(pat, txt, q):
 T=list(map(int,input().split()))
 P=list(map(int,input().split()))
 q=int(input())
-print(search(P,T,q))
+search(P,T,q)

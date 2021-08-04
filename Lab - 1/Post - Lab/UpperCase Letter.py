@@ -22,4 +22,5 @@ for i in range(len(c)):
             t=c[i]
             c[i]=c[j]
             c[j]=t
-print(c,b)
+for i in range(len(b)):
+    print([b[i],c[i]],end=",")

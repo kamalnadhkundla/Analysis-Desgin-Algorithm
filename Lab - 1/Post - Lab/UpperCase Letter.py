@@ -1,3 +1,4 @@
+
 """
 Input arr[] = poiNtEr aRRAy cOde foR
 Output: [('cOde', 1), ('foR', 1), ('poiNtEr', 2), ('aRRAy', 3)]
